@@ -1,0 +1,54 @@
+<div *ngIf= "bike">
+  
+<form (submit) ="updateBike()" #updateForm = "ngForm">
+  <h3>Update Bike</h3>
+
+  <label for="image">Image Url:</label>
+    <input type="text" 
+         name="image"
+         [value]= "bike.image"
+         required
+         [(ngModel)] = "updatedBike.image"
+         #image= "ngModel">
+         <span *ngIf= "image.invalid && image.dirty">Image Url is required</span><br>
+
+  <label for="title">Title:</label>
+    <input type="text"
+           name="title"
+           required
+           [value]= "bike.title"
+           [(ngModel)]="updatedBike.title"
+           #title= "ngModel">
+           <span *ngIf = "title.invalid && title.dirty">Title is required</span> <br>
+
+  <label for="description">Description:</label><br>
+    <textarea name="description"  
+              cols="30" rows="10"
+              [value]= "bike.description"
+              required
+              maxlength="200"
+              [(ngModel)]= "updatedBike.description"
+              #description= "ngModel"></textarea>
+              <span *ngIf= "description.invalid && description.dirty">Description is required, under 200 characters</span><br>
+           
+  <label for="price">Price:</label>
+    <input type="number"
+           name = "price"
+           min= "1.00"
+           step= "0.01"
+           [value]= "bike.price"
+           [(ngModel)]= "updatedBike.price"
+           #price= "ngModel">
+           <span *ngIf="price.invalid && price.dirty">Price is required min $1</span><br>
+
+  <label for="location">Location:</label>
+    <input type="text"
+           name="location"
+           [value]= "bike.location"
+           required
+           [(ngModel)]= "updatedBike.location"
+           #location= "ngModel">
+           <span *ngIf="location.invalid && location.dirty">Location is required</span><br>
+    <input type="submit" value= "UPDATE">
+</form>
+</div>

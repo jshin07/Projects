@@ -1,0 +1,87 @@
+<div class = "container">
+  <div class = "log_in">
+    <h1>Log In</h1>
+      <form (submit) = "login()" #loginForm = "ngForm">
+        <label for="email">*Email:</label>
+          <input type="text"
+                name= "email"
+                required
+                minlength="1"
+                [(ngModel)] = "logUser.email"
+                #loginEmail= "ngModel"><br>
+          <!-- <span *ngIf= "loginEmail.invalid">"Please enter your email"</span><br> -->
+        <label for="password">*Password:</label>
+          <input type="text" 
+                name= "password"
+                required
+                minlength="1"
+                [(ngModel)] = "logUser.password"
+                #loginPassword = "ngModel"><br>
+                <!-- <span *ngIf= "loginPassword.invalid">"Please enter your password"</span><br> -->
+                
+        <input type="submit" value= "Login" [disabled]= "loginForm.invalid">
+      </form>  
+  </div>
+  
+
+  <div class = "registration">
+      <h1>Registration</h1>
+      <div *ngIf= "errorMessage"> {{errorMessage}}</div>
+
+      <!-- {{errorMessage | json}} -->
+      <!-- <div *ngIf= "err"> THis is the error: {{err}}</div>  HOW DO YOU DISPLAY ERROR FORM THE SERVER????--> 
+      <form (submit) = "register()" #registerForm = "ngForm">
+        <label for="firstName">*First Name:</label>
+          <input type="text"
+                name= "firstName"
+                required
+                minlength="2"
+                [(ngModel)] = "regUser.firstName"
+                #regFirstName= "ngModel">
+          <span *ngIf= "regFirstName.invalid && regFirstName.dirty">"At least 2 character required"</span><br>
+
+        <label for="lasttName">*Last Name:</label>
+          <input type="text"
+                name= "lastName"
+                required
+                minlength="2"
+                [(ngModel)] = "regUser.lastName"
+                #regLastName= "ngModel">
+          <span *ngIf= "regLastName.invalid && regLastName.dirty">"At least 2 character required"</span><br>
+          
+        <label for="email">*Email:</label>
+          <input type="text"
+                name= "email"
+                pattern= "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                required
+                minlength="6"
+                [(ngModel)] = "regUser.email"
+                #regEmail= "ngModel">
+          <span *ngIf= "regEmail.invalid && regEmail.dirty">"Proper email format required"</span><br>
+
+        <label for="password">*Password:</label>
+          <input type="text" 
+                name= "password"
+                required
+                minlength="8"
+                [(ngModel)] = "regUser.password"
+                #regPassword = "ngModel">
+                <span *ngIf= "regPassword.invalid && regPassword.dirty">"At least 8 characters required"</span><br>
+
+          <label for="passwordConfirmation">*Password Confirmation:</label>
+            <input type="text" 
+                  name= "passwordConfirmation"
+                  required
+                  [(ngModel)] = "regUser.passwordConfirmation"
+                  #RegPasswordConfirmation = "ngModel">
+                  <span *ngIf= "RegPasswordConfirmation.invalid && RegPasswordConfirmation.dirty ">"Please check your password"</span><br>        
+                
+        <input type="submit" value= "Register" [disabled]= "!registerForm.valid">
+      </form>  
+
+  </div>
+
+
+
+
+</div>

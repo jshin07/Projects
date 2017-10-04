@@ -1,0 +1,21 @@
+<div>
+
+    <h4>{{bike.title}}</h4>
+    <p>{{bike.description}}</p>
+    <h5>{{bike.price | currency:'USD':true}}</h5>
+    <h5>{{bike.location}}</h5>
+  
+    <!-- <br>{{bike | json}} BIKE USER ID <br>
+    <br>{{bike.user_id}} BIKE USER ID <br>
+    <br>{{id}}  ID <br> -->
+
+
+<div *ngIf= "bike.user_id== id">
+    <button (click)= "delete(bike._id)">DELETE</button>  <br>
+
+    <button><a [routerLink]="['/update', bike._id]" >UPDATE</a> </button>
+
+</div>
+<hr>
+
+</div> 

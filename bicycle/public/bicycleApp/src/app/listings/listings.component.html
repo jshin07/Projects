@@ -1,0 +1,56 @@
+<div>
+  <a [routerLink]="['/browse']" >Browse</a> |
+  <a [routerLink]="['/listings']" >My Listings</a> |
+  <a [routerLink]="['/logoff']" >Log Off</a> 
+  
+<form (submit) ="createBike()" #createForm = "ngForm">
+  <h3>Create Listing</h3>
+
+  <label for="image">Image Url:</label>
+    <input type="text" 
+         name="image"
+         required
+         [(ngModel)] = "bike.image"
+         #image= "ngModel">
+         <span *ngIf= "image.invalid && image.dirty">Image Url is required</span><br>
+
+  <label for="title">Title:</label>
+    <input type="text"
+           name="title"
+           required
+           [(ngModel)]="bike.title"
+           #title= "ngModel">
+           <span *ngIf = "title.invalid && title.dirty">Title is required</span> <br>
+
+  <label for="description">Description:</label><br>
+    <textarea name="description"  
+              cols="30" rows="10"
+              required
+              maxlength="200"
+              [(ngModel)]= "bike.description"
+              #description= "ngModel"></textarea>
+              <span *ngIf= "description.invalid && description.dirty">Description is required, under 200 characters</span><br>
+           
+  <label for="price">Price:</label>
+    <input type="number"
+           name = "price"
+           min= "1.00"
+           step= "0.01"
+           [(ngModel)]= "bike.price"
+           #price= "ngModel">
+           <span *ngIf="price.invalid && price.dirty">Price is required min $1</span><br>
+
+  <label for="location">Location:</label>
+    <input type="text"
+           name="location"
+           required
+           [(ngModel)]= "bike.location"
+           #location= "ngModel">
+           <span *ngIf="location.invalid && location.dirty">Location is required</span><br>
+    <input type="submit" value= "CREATE" [disabled]= "createForm.invalid">
+</form>
+
+<app-bikes [allBikes]= "allbikes"></app-bikes>
+
+
+</div>
