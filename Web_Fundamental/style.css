@@ -1,0 +1,229 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 976px;
+    height:auto;
+    background-color: #1a1a1a;
+    padding:0px 10px 5px 10px;
+}
+
+.header {
+    height:130px;
+    background-color: #1a1a1a;
+}
+
+.header img {
+    height: 90px;
+    padding: 20px
+}
+
+.header p{
+    display: inline-flex;
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    left: 400px;
+    bottom: 80px;
+}
+
+.nav  {
+    height: 60px;
+    background: #595959; /* Old Browsers */
+    background: -webkit-linear-gradient(top,#595959,#1a1a1a); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top,#595959,#1a1a1a); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top,#595959,#1a1a1a); /*Fx 3.6-15*/
+    background: linear-gradient(to bottom, #595959, #1a1a1a); /*Standard*/
+}
+
+
+.nav li {
+    list-style-type: none;
+    display: inline-block;
+    font-family: arial;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color:grey;
+}
+
+.nav a {
+    color:grey;
+    text-decoration: none;
+} 
+
+
+.nav #home {
+    color:white
+}
+
+
+.content { /*********************/
+    border-top: 5px solid #363636;
+
+}
+
+.content > div {
+    width: 230px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;    
+}
+.content img {
+    width: 40px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.content p {
+    width: 180px;
+    margin-right: 0px;
+    position:relative;
+    top: -40px
+}
+
+.content .title {
+    color:darkorange; 
+    font-family: 'Droid Serif', serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 25px;
+    padding-bottom: 5px;
+}
+    
+.content .text {
+    width: 160px;
+    height: 80px;
+    margin-right: 20px;
+    
+} 
+
+.content .text, .buy .text, .portfolio .text {
+    color: azure;
+    font-size: 14px;
+    font-family: "source sans pro", sans-serif;
+    line-height: 1.4em;
+}
+
+.buy {
+    height: 140px;
+    background-image: url(images/modernize/bgr.png);
+    background-repeat: repeat-x repeat-y;
+ 
+}
+
+.buy .title {
+    display: inline-block;
+    color:white;
+    font-size: 24px;
+    font-family: "source sans pro", sans-serif;
+    padding: 20px 20px;
+ 
+}
+
+.buy .text {
+    width: 650px;
+    display: inline-block;
+    padding-left: 20px;
+
+}
+
+.buy_button {
+    display: inline;
+    padding: 10px 30px;
+    background-color: darkorange;
+    border-radius: 5px;
+    position: relative;
+    left: 120px;
+    bottom:20px;
+}
+
+.buy_button a {
+    color:white;
+    text-decoration: none;
+    font-family: arial;
+}
+
+.portfolio {
+    background-color: #1a1a1a;
+    height: 400px;
+}
+
+
+.portfolio .maintitle {
+    padding: 20px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;    
+}
+
+.portfolio .view {
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+    position: relative;
+    bottom: 40px;
+}
+
+.portfolio a {
+    text-decoration: none;
+    color: darkorange;
+    font-style: italic;
+}
+
+
+.portfolio >div {
+    display: inline-block;
+    width: 210px;
+    height: auto;
+    vertical-align: top;
+    margin-left: 22px;
+
+}
+
+.portfolio img {
+    border: 5px solid #363636;
+    position: relative;
+    bottom: 15px;    
+}
+
+.portfolio .title {
+    color:orange;
+    font-weight: bold;
+}
+
+.portfolio .text {
+    padding-top: 10px;
+    width: 220px;
+    text-align: left;
+}
+
+.portfolio .back {
+    text-align: right;
+    display: inline;
+}
+
+.portfolio .back p {
+    width: 950px;
+    color: darkgrey;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 30px;
+ 
+}
+
